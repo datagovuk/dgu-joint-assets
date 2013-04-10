@@ -1,0 +1,38 @@
+body{background:#f4f4f4 url('/images/bg-thin-lighter.png') repeat-x;}
+#blackbar{top:0;left:0;z-index:1500;width:100%;background:#202020;color:#fff;height:27px;}#blackbar>.container{width:100%;max-width:940px;}
+#blackbar a{color:#fff;}
+#blackbar #hm-government-link{float:left;margin-top:2px;margin-left:10px;}
+#blackbar #login-or-signup{font-size:11px;float:right;margin-top:4px;margin-right:10px;}
+#blackbar #login-or-signup a{font-weight:bold;}
+#branding{height:69px;padding-top:18px;padding-left:55px;}
+ul#nav{list-style-type:none;margin-left:0;margin-bottom:0;font-size:0;}ul#nav li{padding:0;width:98px;position:relative;float:left;background:#3A3A3A;}ul#nav li a{color:#ccc;text-align:center;display:block;padding:8px 10px;font-size:14px;font-weight:300;border-top:1px solid #000;}ul#nav li a:hover{color:#fff;text-decoration:none;background:url('/images/nav-chevron.png') 50% 100% no-repeat;}
+ul#nav li a .nav-icon{width:21px;height:18px;margin:0 10px 0 0;background:url('/images/home-icon.png');display:inline-block;zoom:1;*display:inline;vertical-align:top;}
+ul#nav li#nav-home{width:110px;}ul#nav li#nav-home a{border-left:1px solid #000;}
+ul#nav li#nav-linked-data{width:110px;}
+ul#nav li#nav-data-requests{width:120px;}
+ul#nav li#nav-about{width:110px;}ul#nav li#nav-about a{border-right:1px solid #000;}
+ul#nav li.active a{color:#fff;background:url('/images/nav-chevron.png') 50% 100% no-repeat;}
+ul#nav li:hover a .nav-icon{background-position:-21px 0;}
+#subnav{list-style-type:none;margin:0;padding:6px 18px;border:1px solid #ccc;border-top:none;}#subnav li{display:inline;}
+#subnav .divider{color:#bbb;}
+#subnav a.active{font-weight:bold;color:#336600;}
+#sidebar .widget-container{margin-left:-10px;margin-right:-10px;padding:8px 10px 8px 15px;overflow:hidden;}#sidebar .widget-container h4{color:#656565;padding-bottom:5px;margin:0 -10px 4px -15px;border-bottom:1px solid #aaa;padding-left:10px;}
+#sidebar .widget-container span.stButton{margin-bottom:5px;}
+#sidebar .widget-container ul.tags,#sidebar .widget-container ul.groups{list-style-image:none;list-style:none;margin-left:0;}
+.footer{background:#fff;border-top:1px solid #ccc;margin-top:30px;padding-top:20px;padding-bottom:40px;}.footer .links li{display:inline;list-style-type:none;padding:0 0 0 10px;}
+.footer .links a{color:#666;}
+.footer .credit{text-align:center;width:120px;margin-top:10px;float:right;}
+.footer .credit img{display:block;margin:0 auto;}
+.boxed{-webkit-box-shadow:0px 2px 6px rgba(0, 0, 0, 0.1);-moz-box-shadow:0px 2px 6px rgba(0, 0, 0, 0.1);box-shadow:0px 2px 6px rgba(0, 0, 0, 0.1);background:#fff;border:1px solid #ccc;margin-bottom:10px;padding:14px 17px;}
+.btn-small{font-size:12px;}
+.btn-primary{background-color:#ade44e;background-image:-moz-linear-gradient(top, #bae772, #a4d84a);background-image:-ms-linear-gradient(top, #bae772, #a4d84a);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#bae772), to(#a4d84a));background-image:-webkit-linear-gradient(top, #bae772, #a4d84a);background-image:-o-linear-gradient(top, #bae772, #a4d84a);background-image:linear-gradient(top, #bae772, #a4d84a);background-repeat:repeat-x;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#bae772', endColorstr='#a4d84a', GradientType=0);border-color:#690;border-top-color:transparent;border-left-color:transparent;filter:progid:dximagetransform.microsoft.gradient(enabled=false);text-shadow:1px 1px 0 rgba(255, 255, 255, 0.4);color:#333333;}.btn-primary:hover,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{background-color:#a4d84a;}
+.btn-primary:active,.btn-primary.active{background-color:#79aa00 \9;}
+.btn-primary.active{color:#333333;color:rgba(255, 255, 255, 0.75);}
+.btn-primary .caret{border-top-color:#333;}
+.btn-primary:hover{text-shadow:1px 1px 0 rgba(255, 255, 255, 0.4);color:#333333;}
+.btn-group .btn-primary.dropdown-toggle{border-left:1px solid #7b2;}
+.label-dgu,.badge-dgu{background-color:#66AA44;}.label-dgu[href],.badge-dgu[href]{background-color:#559933;}
+h1 .subheading{display:block;font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:top;}h1 .subheading>img{vertical-align:baseline;width:20.8px;height:20px;}
+h1 .subheading .divider{padding-left:5px;padding-right:5px;color:#aaa;}
+h1 .subheading a.active{color:#000;}
+h1 .subheading .subheading{margin-left:30px;margin-top:-3px;}h1 .subheading .subheading>img{vertical-align:baseline;width:15.6px;height:15px;}
