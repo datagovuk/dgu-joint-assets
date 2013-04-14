@@ -7,12 +7,30 @@
   box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
 
+
+/* Root Elements */
+/* ------------- */
+h1 { font-size: 24px; line-height: 30px; margin-bottom: 10px; }
+h2 { font-size: 22px; line-height: 27px; margin-bottom: 8px; }
+h3 { font-size: 19px; line-height: 23px; margin-bottom: 8px; }
+h4 { font-size: 16px; line-height: 18px; margin-bottom: 8px; }
+h5 { font-size: 13px; line-height: 15px; margin-bottom: 8px; }
+h6 { font-size: 13px; line-height: 15px; margin-bottom: 8px; }
+a       { color: #690; }
+a:hover { color: #470; }
+input:focus,
+textarea:focus {
+    border-color: #55AA00;
+    border-color: rgba(80, 160, 0, 0.8);
+    .box-shadow-double(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(50, 100, 0, 0.6));
+}
+
 /* Page Header */
 /* ----------- */
-
 body {
     background: #f4f4f4 url('/images/bg-thin-lighter.png') repeat-x;
 }
+
 /* BlackBar */
 /* -------- */
 #blackbar {
@@ -143,7 +161,8 @@ ul#nav {
 }
 
 
-
+/* Sidebar */
+/* ------- */
 #sidebar {
     .widget-container {
         /* Long email addresses will break the sidebar */
@@ -212,11 +231,9 @@ ul#nav {
 
 /* Standard page elements */
 /* ---------------------- */
-
 .btn-small {
     font-size: 12px;
 }
-
 div.green-button-wrapper a,
 a.green-button,
 ul.primary li a,
@@ -266,6 +283,8 @@ ul.primary li a,
     border-left: 1px solid #7b2;
 }
 
+/* Boostrap customisation */
+/* ---------------------- */
 .label-dgu,
 .badge-dgu {
     background-color: #66AA44;
@@ -274,6 +293,9 @@ ul.primary li a,
     }
 }
 
+
+/* Headings, subheadings */
+/* --------------------- */
 h1 .subheading {
     display: block;
     font-size: 19px;
