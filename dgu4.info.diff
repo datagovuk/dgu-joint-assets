@@ -1,7 +1,0 @@
-29a30
-> stylesheets[all][] = css/joint-ckan-drupal.css
-53c54
-< features[] = secondary_links
-\ No newline at end of file
----
-> features[] = secondary_links
