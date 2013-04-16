@@ -1,11 +1,35 @@
 @import "bootstrap.min.css.less";
 @import "elements.less";
 
+/* Google fonts repo */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
 .drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
   -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
   -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
   box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', Helvetica Neue, Helvetica;
+  font-weight: normal;
+}
+#login-or-signup, 
+ul#nav li a {
+  font-family: 'Open Sans';
+}
+
 
 
 /* Root Elements */
@@ -58,9 +82,9 @@ body {
         float: right;
         margin-top: 4px;
         margin-right: 10px;
-    }
-    #login-or-signup a {
-        font-weight: bold;
+        a {
+          font-weight: bold;
+        }
     }
 }
 
@@ -102,7 +126,7 @@ ul#nav {
             .nav-icon {
                 width: 21px;
                 height: 18px;
-                margin: 0 10px 0 0;
+                margin: 0 10px -1px 0;
                 background: url('/images/home-icon.png');
                 display: inline-block;
                 zoom: 1;
@@ -348,3 +372,92 @@ h1 .subheading {
       }
     }
 }
+
+
+
+/* Comments Drupal's HTML appears in CKAN's pages. 
+ * Put this in shared code so it can use mixins as needed
+/* ------------------------------------------------------ */
+#comments-container {
+    div.new-comment-link {
+        position:relative;
+        margin-bottom: 5px;
+        min-height:34px;
+        text-align:right;
+        padding:15px 12px 0 0;
+    }
+    .comment .user-picture {
+        .box-shadow(1px 1px 2px 0 #ccc);
+        padding: 3px;
+        margin-right: 15px;
+    }
+    .comment .user-picture-cell {
+        vertical-align: top;
+    }
+    .comment table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    div.comment td {
+        border: none;
+    }
+    .comment .user-picture {
+        width: 62px;
+    }
+    .comment .user-picture img {
+        border-color: #999 #CCC #DDD #999;
+        border-style: solid;
+        border-width: 1px;
+        margin: 1px;
+    }
+    div.comment {
+        background-color: white;
+        .drop-shadow(0px, 2px, 6px, 0.10);
+        background: #fff;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 14px 17px;
+        clear: both;
+        margin: 0 0 20px 0;
+        min-height: 75px;
+        padding: 12px;
+        z-index: 20;
+        position: relative;
+    }
+    div.comment-content h3 a {
+        color: black;
+    }
+    div.comment-content .submitted {
+        margin-bottom: 15px;
+    }
+    #comments .clear-block {
+        display: block;
+    }
+    #comments .clear-block::after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    #comments div.green-button-wrapper a, 
+    #comments a.green-button, 
+    #comments ul.primary li a {
+        .btn;
+        .btn-primary;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .comment ul.links li {
+        padding: 0 0 5px 10px;
+        float: right;
+        list-style-type: none;
+    }
+    .indented {
+        margin-left: 3px;
+        border-left: 2px dotted #7BB200;
+        padding-left: 25px;
+    }
+}
+
