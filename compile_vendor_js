@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+var path = require('path'),
+    nodeWatch = require('nodewatch'),
+    exec = require('child_process').exec;
+
+function script_path(f) {
+  return path.join(__dirname,'assets','js',f);
+}
+
+var vendor_libs = [
+  'jqueryui/1.10.2/js/jquery-ui-1.10.2.custom.min.js',
+  'underscore-1.1.6.js',
+  'backbone-0.5.1.js',
+  'modernizr-1.7.min.js',
+  'spin.min.js',
+  'json2.js',
+  'jquery.tmpl.beta1.js',
+  'jquery.cookie.min.js',
+  'jquery.chosen-0.9.7.js',
+  'jquery.placeholder.js',
+  'bootstrap-2.0.3.min.js',
+  'bootstrap-hashchange.js'
+];
+for (var i=0;i<vendor_libs.length;i++) {
+  vendor_libs[i] = script_path(vendor_libs[i]);
+}
+
+function compile(infiles, outfile) {
+  var out = 'java -jar '+path.join(__dirname,'js-closure-compiler.jar')+' --js=';
+  for (var i=0;i<infiles.length;i++) {
+    out += infiles[i]+' ';
+  }
+  out += '--js_output_file ' + outfile;
+  return out;
+}
+
+function now() {
+  return new Date().toISOString().replace('T', ' ').substr(0, 19);
+}
+
+function compile_vendor_libs(event, filename) {
+  var start = Date.now();
+  var output_file = script_path('vendor.compiled.js');
+  var exec_line = compile(vendor_libs,output_file);
+  console.log('Recompiling vendor libraries...');
+  exec(exec_line,{maxBuffer: 2048*1024},function(err,stdout,stderr) {
+    if (err) {
+      console.log('Done with errors:');
+      console.log(err);
+    }
+    else {
+      console.log('Done. Written: ' + output_file);
+    }
+  });
+}
+
+compile_vendor_libs();
