@@ -1119,3 +1119,4 @@ h1 .subheading .subheading{margin-left:30px;margin-top:-3px;}h1 .subheading .sub
 #comments-container #comments div.green-button-wrapper a:hover,#comments-container #comments a.green-button:hover,#comments-container #comments ul.primary li a:hover{text-decoration:none;}
 #comments-container .comment ul.links li{padding:0 0 5px 10px;float:right;list-style-type:none;}
 #comments-container .indented{margin-left:3px;border-left:2px dotted #7BB200;padding-left:25px;}
+.ui-autocomplete{background:#fff;}.ui-autocomplete .ui-state-hover,.ui-autocomplete .ui-state-focus{background-color:#B8E56E;border-color:#97CB42;color:#000;}
