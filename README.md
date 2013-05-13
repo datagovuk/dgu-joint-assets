@@ -25,6 +25,9 @@ Shared files include:
   * modernizr 1.7
   * spin.js
   * underscore 1.1.6
+* **Resulting compiled files:**
+  * /assets/css/dgu-joint.compiled.css
+  * /assets/js/vendor.compiled.js
 
 ### Installation: CKAN side
 
