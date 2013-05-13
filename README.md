@@ -1,6 +1,4 @@
-# Shared Assets
-
-## (1) Installation
+# (1) Installation
 
 We store a central repository of shared CSS and Javascript assets. This is to improve performance of the site and to deduplicate certain efforts, as well as to ease development of the theme.
 
@@ -32,11 +30,11 @@ Shared files include:
 
 * Clone [dgu-joint-assets](http://github.com/datagovuk/dgu-joint-assets) in your `src/` folder alongside `src/ckanext-dgu/`.
 
-This magically works because [there is a symlink](https://github.com/datagovuk/ckanext-dgu/blob/master/ckanext/dgu/theme/public/assets) installed in `src/ckanext-dgu/ckanext/dgu/theme/public/` linking to `../../../../../dgu-joint-assets/assets`, so the folder is magically shared.
+This magically works because [there is a symlink](https://github.com/datagovuk/ckanext-dgu/blob/master/ckanext/dgu/theme/public/assets) installed in `src/ckanext-dgu/ckanext/dgu/theme/public/` linking to `../../../../../dgu-joint-assets/assets`, so the folder is shared along with everything else in `public`.
 
 ### Installation: Through Apache (eg. Drupal developers)
 
-* Clone the [dgu-joint-assets](http://github.com/datagovuk/dgu-joint-assets) repo somewhere on your machine. Eg. my (zephod)'s is at `~/code/dgu-joint-assets/`.
+* Clone the [dgu-joint-assets](http://github.com/datagovuk/dgu-joint-assets) repo somewhere on your machine. Eg. zephod's is at `~/code/dgu-joint-assets/`.
 * Update your Apache configuration to share the `~/code/dgu-joint-assets/assets` folder on the local webserver as `/assets/`.
 
 Eg. Except from `co-dev1:/etc/apache2/sites-available/dgu.common`:
@@ -51,11 +49,9 @@ Eg. Except from `co-dev1:/etc/apache2/sites-available/dgu.common`:
             allow from all
     </Directory>
 
-### In Production
+### Installation: In Production
 
 Follow the Apache instructions as above. The repo is cloned in `~/dgu-joint-assets` and the config matches the above.
-
----
 
 # (2) Developing CSS
 
@@ -73,7 +69,7 @@ These are vendor libraries, so mainly we'll want to add/remove files from the co
 
 * Add/remove files from `assets/js/`
 * Update whitelist in node script `./compile_vendor_js`. 
-* Wince slightly while doing so, but sagely understand that there are legacy reasons why this is a node script.
+* Wince slightly while doing so, but sagely understand that there are legacy reasons why this is a node script, and you're welcome to rewrite it.
 * Execute `./compile_vendor_js`.
 * This overwrites `assets/js/vendor.compiled.js`. Including error checking and minification.
 * Commit, push pull as normal.
