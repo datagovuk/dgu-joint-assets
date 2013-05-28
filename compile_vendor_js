@@ -18,6 +18,7 @@ var vendor_libs = [
   'jquery.tmpl.beta1.js',
   'jquery.cookie.min.js',
   'jquery.chosen-0.9.7.js',
+  'jquery.dotdotdot-1.5.9.js',
   'jquery.placeholder.js',
   'bootstrap-2.0.3.min.js',
   'bootstrap-hashchange.js'
