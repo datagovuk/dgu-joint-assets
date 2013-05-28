@@ -20,6 +20,7 @@ Shared files include:
   * jQuery cookies
   * jQuery placeholders
   * jQuery tmpl
+  * jQuery dotdotdot 1.5.9
   * jQuery UI 1.10.2
   * json2.js
   * modernizr 1.7
@@ -75,6 +76,8 @@ These are vendor libraries, so mainly we'll want to add/remove files from the co
 * Wince slightly while doing so, but sagely understand that there are legacy reasons why this is a node script, and you're welcome to rewrite it.
 * Execute `./compile_vendor_js`.
 * This overwrites `assets/js/vendor.compiled.js`. Including error checking and minification.
+* Update `layout_base` in ckanext\_dgu to include the new script under the `use_raw_js` directive.
+* Update this README to add the new file to the list at the top.
 * Commit, push pull as normal.
 
 
