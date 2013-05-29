@@ -3,6 +3,21 @@
 @import "jquery.chosen.css.less";
 @import "jquery-ui-1.10.2.custom.css.less";
 
+@highdpi: ~"(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";
+
+.at2x(@path, @w: auto, @h: auto, @posx: 0, @posy: 0, @repeat: no-repeat) {
+  background-image: url(@path);
+  @at2x_path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@2x" + match; })`;
+  background-repeat: @repeat;
+  background-position: @posx @posy;
+
+  @media @highdpi {
+    background-image: url("@{at2x_path}");
+    background-size: @w @h;
+    background-position: @posx * 2 @posy * 2;
+  }
+}
+
 /* Google fonts repo */
 @font-face {
   font-family: 'Open Sans';
@@ -56,7 +71,6 @@ textarea:focus {
 body {
     background: #f4f4f4 url('/images/bg-thin-lighter.png') repeat-x;
 }
-
 /* BlackBar */
 /* -------- */
 #blackbar {
@@ -79,6 +93,17 @@ body {
         margin-top: 2px;
         margin-left: 10px;
     }
+    #hm-government-link.retina-img {
+        /* Retina-enabled image */
+        @media @highdpi {
+          width: 127px;
+          height: 18px;
+          margin-top: 3px;
+          background-image: url('/images/crown-text@2x.png');
+          background-size: 127px 18px;
+          img { display: none; } 
+        }
+    }
     #login-or-signup {
         font-size: 11px;
         float: right;
@@ -96,6 +121,15 @@ body {
     height: 69px;
     padding-top: 18px;
     padding-left: 55px;
+    #dgu-header.retina-img {
+        @media @highdpi {
+            width: 282px;
+            height: 52px;
+            background-image: url('/images/dgu-header@2x.png');
+            background-size: 282px 52px;
+            img { display: none; } 
+        }
+    }
 }
 
 
@@ -123,15 +157,14 @@ ul#nav {
             &:hover {
                 color: #fff;
                 text-decoration: none;
-                background: url('/images/nav-chevron-x2.png') 50% 100% no-repeat;
-                background-size: 14px 7px;
+                .at2x('/images/nav-chevron.png',14px,7px);
+                background-position: 50% 100% !important;
             }
             .nav-icon {
                 width: 21px;
                 height: 18px;
                 margin: 0 10px -1px 0;
-                background: url('/images/home-icon-x2.png');
-                background-size: 21px 36px;
+                .at2x('/images/home-icon.png',21px,36px);
                 display: inline-block;
                 zoom: 1;
               *display: inline;
@@ -156,8 +189,8 @@ ul#nav {
     li.active {
         a {
             color: #fff;
-            background: url('/images/nav-chevron-x2.png') 50% 100% no-repeat;
-            background-size: 14px 7px;
+            .at2x('/images/nav-chevron.png',14px,7px);
+            background-position: 50% 100% !important;
         }
     }
     li:hover {
