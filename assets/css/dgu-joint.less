@@ -269,13 +269,23 @@ ul#nav {
     }
     .credit {
         text-align: center;
-        width: 120px;
+        width: 150px;
         margin-top: 10px;
         float: right;
     }
     .credit img {
-        display: block;
         margin: 0 auto;
+    }
+    #ckan-logo.retina-img {
+        margin: 0 auto;
+        margin-top: 5px;
+        @media @highdpi {
+            width: 89px;
+            height: 30px;
+            background-image: url('/images/ckan-logo@2x.png');
+            background-size: 89px 30px;
+            img { display: none; } 
+        }
     }
 }
 
