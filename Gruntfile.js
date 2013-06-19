@@ -30,15 +30,32 @@ module.exports = function(grunt) {
         src: 'assets/js/vendor.js',
         dest: 'assets/js/vendor.compiled.js'
       }
+    },
+    less: {
+      options: {
+        banner: '/* dgu-less compiled <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        yuicompress: true
+      },
+      build: {
+        src: 'assets/css/dgu-joint.less',
+        dest: 'assets/css/dgu-joint.compiled.css'
+      }
+    },
+    timestamp: {
+      build: {
+        dest: 'assets/timestamp'
+      }
     }
   });
 
-  // load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.registerMultiTask('timestamp', 'Write timestamp to a file', function(myName, myTargets) {
+    grunt.file.write(this.files[0].dest, Date.now());
+  });
 
-  // load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task(s).
-  grunt.registerTask('default', ['concat','uglify']);
+  grunt.registerTask('default', ['concat','uglify','less','timestamp']);
 };
