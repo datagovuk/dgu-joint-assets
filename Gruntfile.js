@@ -41,9 +41,13 @@ module.exports = function(grunt) {
         banner: '/* dgu-less compiled <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         yuicompress: true
       },
-      build: {
+      original: {
         src: 'assets/css/dgu-joint.less',
         dest: 'assets/css/dgu-joint.compiled.css'
+      },
+      responsive: {
+        src: 'assets/css/dgu-responsive.less',
+        dest: 'assets/css/dgu-responsive.min.css'
       }
     },
     timestamp: {
