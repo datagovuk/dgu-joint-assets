@@ -50,6 +50,12 @@ module.exports = function(grunt) {
         dest: 'assets/css/dgu-responsive.min.css'
       }
     },
+    watch: {
+      lessresponsive: {
+        files: 'assets/css/**.less',
+        tasks: 'less:responsive'
+      }
+    },
     timestamp: {
       build: {
         dest: 'assets/timestamp'
@@ -64,6 +70,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
   grunt.registerTask('default', ['concat','uglify','less','timestamp']);
