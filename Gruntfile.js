@@ -9,16 +9,21 @@ module.exports = function(grunt) {
         banner: '/*! VENDOR JS concatenated <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'assets/js/**/*.js',
-        filter: function(filename) {
-          /* Filter output filenames which start with "vendor" */
-          var basename = path.basename(filename);
-          if (!basename.match(/^vendor/)) {
-            console.log(basename);
-            return true;
-          } 
-          return false;
-        },
+        src: [
+          'assets/js/jquery-ui-1.10.2.custom.js',
+          'assets/js/underscore-1.1.6.js',
+          'assets/js/backbone-0.5.1.js',
+          'assets/js/modernizr-2.6.2.custom.js',
+          'assets/js/spin.min.js',
+          'assets/js/json2.js',
+          'assets/js/jquery.tmpl.beta1.js',
+          'assets/js/jquery.cookie.min.js',
+          'assets/js/jquery.chosen-0.9.7.js',
+          'assets/js/jquery.dotdotdot-1.5.9.js',
+          'assets/js/jquery.placeholder.js',
+          'assets/js/bootstrap-2.0.3.min.js',
+          'assets/js/bootstrap-hashchange.js'
+        ],
         dest: 'assets/js/vendor.js'
       }
     },
